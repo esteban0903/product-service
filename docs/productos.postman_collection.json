@@ -1,0 +1,49 @@
+{
+  "info": {
+    "name": "Productos API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8080" }
+  ],
+  "item": [
+    {
+      "name": "Listar productos",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/productos"
+      }
+    },
+    {
+      "name": "Crear producto",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Teclado mecanico\",\n  \"precio\": 189900.50,\n  \"stock\": 12\n}"
+        },
+        "url": "{{baseUrl}}/productos"
+      }
+    },
+    {
+      "name": "Actualizar producto",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": 1,\n  \"nombre\": \"Teclado mecanico RGB\",\n  \"precio\": 199900,\n  \"stock\": 10\n}"
+        },
+        "url": "{{baseUrl}}/productos"
+      }
+    },
+    {
+      "name": "Eliminar producto",
+      "request": {
+        "method": "POST",
+        "url": "{{baseUrl}}/productos/1"
+      }
+    }
+  ]
+}
